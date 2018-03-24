@@ -59,6 +59,8 @@
 		var operand2 = 0;
 		var operator = '';
 		var res = 0;
+		
+		var COLOR;
 
 		function operand(num){
 			operand2=operand2*10+num;
@@ -229,6 +231,15 @@
 			document.getElementById('resultPanel').innerHTML = result;
 		}
 
+		function press(obj){
+			//alert("123");
+			COLOR = obj.style.backgroundColor;
+			obj.style.backgroundColor="#000";
+		}
+		function diacharge(obj){
+			//alert("123");
+			obj.style.backgroundColor=COLOR;
+		}
 		</script>
 		<!-- 结束定义js脚本 -->
 
@@ -247,38 +258,38 @@
 
 				<!-- 第二行 -->
 				<tr>
-					<td colspan="3"><div class="button_control" onclick="clean()">AC</div></td>
-					<td width="25%"><div class="button_operator" onclick="add()">+</div></td>
+					<td colspan="3"><div class="button_control"  onmousedown="press(this)" onmouseup="diacharge(this)" onclick="clean()">AC</div></td>
+					<td width="25%"><div class="button_operator" onmousedown="press(this)" onmouseup="diacharge(this)" onclick="add()">+</div></td>
 				</tr>
 
 				<!-- 第三行 -->
 				<tr>
-					<td width="25%"><div class="button_operand" onclick="operand(1)">1</div></td>
-					<td width="25%"><div class="button_operand" onclick="operand(2)">2</div></td>
-					<td width="25%"><div class="button_operand" onclick="operand(3)">3</div></td>
-					<td width="25%"><div class="button_operator" onclick="subtract()">-</div></td>
+					<td width="25%"><div class="button_operand"  onmousedown="press(this)" onmouseup="diacharge(this)"onclick="operand(1)">1</div></td>
+					<td width="25%"><div class="button_operand"  onmousedown="press(this)" onmouseup="diacharge(this)"onclick="operand(2)">2</div></td>
+					<td width="25%"><div class="button_operand"  onmousedown="press(this)" onmouseup="diacharge(this)"onclick="operand(3)">3</div></td>
+					<td width="25%"><div class="button_operator"  onmousedown="press(this)" onmouseup="diacharge(this)"onclick="subtract()">-</div></td>
 				</tr>
 
 				<!-- 第四行 -->
 				<tr>
-					<td><div class="button_operand" onclick="operand(4)">4</div></td>
-					<td><div class="button_operand" onclick="operand(5)">5</div></td>
-					<td><div class="button_operand" onclick="operand(6)">6</div></td>
-					<td><div class="button_operator" onclick="multiply()">*</div></td>
+					<td><div class="button_operand" onmousedown="press(this)" onmouseup="diacharge(this)" onclick="operand(4)">4</div></td>
+					<td><div class="button_operand"  onmousedown="press(this)" onmouseup="diacharge(this)"onclick="operand(5)">5</div></td>
+					<td><div class="button_operand"  onmousedown="press(this)" onmouseup="diacharge(this)"onclick="operand(6)">6</div></td>
+					<td><div class="button_operator" onmousedown="press(this)" onmouseup="diacharge(this)" onclick="multiply()">*</div></td>
 				</tr>
 
 				<!-- 第五行 -->
 				<tr>
-					<td><div class="button_operand" onclick="operand(7)">7</div></td>
-					<td><div class="button_operand" onclick="operand(8)">8</div></td>
-					<td><div class="button_operand" onclick="operand(9)">9</div></td>
-					<td><div class="button_operator" onclick="devide()">/</div></td>
+					<td><div class="button_operand"  onmousedown="press(this)" onmouseup="diacharge(this)"onclick="operand(7)">7</div></td>
+					<td><div class="button_operand" onmousedown="press(this)" onmouseup="diacharge(this)" onclick="operand(8)">8</div></td>
+					<td><div class="button_operand" onmousedown="press(this)" onmouseup="diacharge(this)" onclick="operand(9)">9</div></td>
+					<td><div class="button_operator" onmousedown="press(this)" onmouseup="diacharge(this)" onclick="devide()">/</div></td>
 				</tr>
 
 				<!-- 第六行 -->
 				<tr>
-					<td colspan="3"><div class="button_operand" onclick="operand(0)">0</div></td>
-					<td><div class="button_operator" onclick="calc()">=</div></td>
+					<td colspan="3"><div class="button_operand" onmousedown="press(this)" onmouseup="diacharge(this)" onclick="operand(0)">0</div></td>
+					<td><div class="button_operator" onmousedown="press(this)" onmouseup="diacharge(this)" onclick="calc()">=</div></td>
 				</tr>
 
 			</table>
